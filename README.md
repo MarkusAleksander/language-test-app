@@ -1,3 +1,3 @@
 # Language Test App
 
-Language testing app built using VueJS
+Language testing app built using VueJS.
