@@ -4,8 +4,6 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 
-// import localData from './local-data/local-data'
-
 Vue.config.productionTip = false
 
 new Vue({
