@@ -5,10 +5,6 @@ export const languageData = [
   },
   {
     'id': 2,
-    'language': 'Latvian'
-  },
-  {
-    'id': 3,
-    'language': 'Lithuanian'
+    'language': 'German'
   }
 ]

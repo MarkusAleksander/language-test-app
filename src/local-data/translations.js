@@ -1,12 +1,18 @@
 export const translationsData = [
   {
     'id': 1,
-    'term': 1,
-    'translation': 'hello'
+    'translation': 'one'
   },
   {
     'id': 2,
-    'term': 2,
-    'translation': 'bye'
+    'translation': 'two'
+  },
+  {
+    'id': 3,
+    'translation': 'three'
+  },
+  {
+    'id': 4,
+    'translation': 'four'
   }
 ]

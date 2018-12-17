@@ -8,4 +8,4 @@ const localData = {
   'translations': translationsData
 }
 
-export default localData;
+export default localData
