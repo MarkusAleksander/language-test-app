@@ -8,8 +8,7 @@
     <test-form
       v-else
       :key="testArray[current_position].id"
-      v-bind:term="testArray[current_position].term"
-      v-bind:answer="testArray[current_position].translation"
+      v-bind:query="testArray[current_position]"
       v-on:answered="updateScore"
       v-on:complete="updatePosition"
     ></test-form>
@@ -41,13 +40,37 @@ export default {
   methods: {
     updateTerms: function(l) {
       this.selected_language =
-        this.selected_language != 0 ? (this.reset(), l) : l;
+        this.selected_language !== 0 ? (this.reset(), l) : l;
       // Get terms for the selected language
-      this.term_list = localData.terms.filter(
+      this.term_list = this.getTerms();
+      if (Object.keys(this.term_list).length == 0) {
+        // Update the test Array
+        this.updateTestArray();
+      }
+    },
+    getTerms: function() {
+      // FIlter down to usable terms
+      let t_terms = localData.terms.filter(
         t => t.language === this.selected_language
       );
-      // Update the test Array
-      this.updateTestArray();
+      // Select random ones
+      let r_terms = [];
+      if (t_terms.length < 5) {
+        return [];
+      }
+      while (r_terms.length < 5) {
+        let r = t_terms[Math.floor(Math.random() * t_terms.length)];
+        let b = (function() {
+          for (let x = 0; x < r_terms.length; x++) {
+            if (r_terms[x] === r) return true;
+          }
+        })();
+        if (!b) {
+          r_terms.push(r);
+        }
+      }
+
+      return r_terms;
     },
     updateTestArray: function() {
       // If called and language not selected, return

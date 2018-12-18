@@ -34,5 +34,23 @@ export const termsData = [
     'term': 'drei',
     'language': 2,
     'translation': 3
+  },
+  {
+    'id': 7,
+    'term': 'tere',
+    'language': 1,
+    'translation': 5
+  },
+  {
+    'id': 8,
+    'term': 'tere hommikust',
+    'language': 1,
+    'translation': 6
+  },
+  {
+    'id': 9,
+    'term': 'mahl',
+    'language': 1,
+    'translation': 7
   }
 ]
