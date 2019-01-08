@@ -14,21 +14,21 @@
 
 <script>
 export default {
-  name: "TestSelector",
-  data: function() {
+  name: 'TestSelector',
+  data: function () {
     return {
       selected_language: 0
-    };
+    }
   },
   props: {
     languages: Array
   },
   methods: {
-    updateLanguage: function() {
-      this.$emit("change", this.selected_language);
+    updateLanguage: function () {
+      this.$emit('change', this.selected_language)
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

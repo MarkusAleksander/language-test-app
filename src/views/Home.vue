@@ -1,17 +1,32 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Click test to begin the test"/>
+    <test-selector v-bind:languages="language_list"></test-selector>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import localData from '@/local-data/local-data.js'
+import TestSelector from '@/components/TestSelector.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    TestSelector
+  },
+  data: function () {
+    return {
+      hasLoaded: false,
+      language_list: null
+    }
+  },
+  beforeMount: function () {
+    this.$store.commit({
+      type: 'setLocalData',
+      data: localData
+    })
+  },
+  mounted: function () {
+    this.language_list = this.$store.getters.getLanguages
   }
 }
 </script>

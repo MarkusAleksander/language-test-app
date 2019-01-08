@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/test">Test</router-link>
-    </div>
     <section id="main">
       <router-view/>
     </section>
@@ -23,18 +19,6 @@
   justify-content: flex-start;
   align-items: stretch;
   padding: 8px;
-}
-
-#nav {
-  display: flex;
-  width: 100%;
-  margin-bottom: 8px;
-  justify-content: center;
-  align-items: center;
-
-  a {
-    padding: 0 8px;
-  }
 }
 
 #main {
@@ -75,4 +59,3 @@ p {
   margin-bottom: 8px;
 }
 </style>
-
