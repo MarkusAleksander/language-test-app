@@ -15,9 +15,15 @@ export default {
   },
   data: function () {
     return {
-      hasLoaded: false,
-      language_list: null
+      language_list: null,
+      max_width: 1200
     }
+  },
+  created: function () {
+    this.$store.commit({
+      type: 'setWidth',
+      width: this.max_width
+    })
   },
   beforeMount: function () {
     this.$store.commit({
