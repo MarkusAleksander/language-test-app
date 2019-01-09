@@ -11,16 +11,16 @@ export default new Vuex.Store({
     current_max_width: 0
   },
   mutations: {
-    completeTest(state) {
+    completeTest (state) {
       state.testComplete = true
     },
-    updateScore(state, payload) {
+    updateScore (state, payload) {
       state.testScore += payload.score
     },
-    setLocalData(state, data) {
+    setLocalData (state, data) {
       state.localData = data
     },
-    setWidth(state, data) {
+    setWidth (state, data) {
       state.current_max_width = data.width
     }
   },

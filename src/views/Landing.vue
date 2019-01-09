@@ -13,7 +13,7 @@ export default {
     }
   },
   beforeMount: function () {
-      console.log('mounting landing...');
+    console.log('mounting landing...')
     this.$store.commit({
       type: 'setWidth',
       width: this.max_width

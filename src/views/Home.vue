@@ -1,17 +1,20 @@
 <template>
-  <div class="home">
-    <test-selector v-bind:languages="language_list"></test-selector>
+  <div class="home-page-wrapper">
+    <div class="col-1">
+      <language-selector></language-selector>
+    </div>
   </div>
 </template>
 
 <script>
 import localData from '@/local-data/local-data.js'
-import TestSelector from '@/components/TestSelector.vue'
+
+import LanguageSelector from '@/components/LanguageSelector'
 
 export default {
   name: 'home',
   components: {
-    TestSelector
+    LanguageSelector
   },
   data: function () {
     return {
@@ -36,3 +39,22 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.landing-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    .col-1 {
+      width: 25%;
+      flex-grow: 1;
+    }
+    .col-2 {
+      width: 75%;
+      flex-grow: 2;
+    }
+}
+</style>

@@ -11,9 +11,10 @@
 <script>
 
 export default {
+  name: "App",
   data: function () {
     return {
-      max_width: 1200
+      max_width: 1500
     }
   },
   computed: {
