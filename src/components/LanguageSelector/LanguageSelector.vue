@@ -1,17 +1,25 @@
 <template>
     <div class="language-selector">
         <ul>
-            <li v-for="language in language_list" :key="language.id">
-                <img :src="`@/assets/${language.flag_image}`" />
-                {{language.language}}</li>
+            <language-selector-item
+                v-for="language in language_list"
+                :key="language.id"
+                :img="language.flag_image"
+                :language="language.language"
+                ></language-selector-item>
         </ul>
     </div>
 </template>
 <script>
+import LanguageSelectorItem from '@/components/LanguageSelector/LanguageSelectorItem';
+
 export default {
   name: "LanguageSelector",
   data: function () {
       return {}
+  },
+  components: {
+      LanguageSelectorItem
   },
   computed: {
     language_list: function () {

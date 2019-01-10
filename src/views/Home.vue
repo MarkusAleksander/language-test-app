@@ -9,7 +9,7 @@
 <script>
 import localData from '@/local-data/local-data.js'
 
-import LanguageSelector from '@/components/LanguageSelector'
+import LanguageSelector from '@/components/LanguageSelector/LanguageSelector'
 
 export default {
   name: 'home',
