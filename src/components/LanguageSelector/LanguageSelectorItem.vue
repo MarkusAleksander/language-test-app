@@ -20,7 +20,7 @@ export default {
         width: 100%;
         max-width: 150px;
         height: auto;
-        display: block;
+        display: inline-block;
         cursor: pointer;
 
         &:hover,

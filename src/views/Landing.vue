@@ -1,6 +1,6 @@
 <template>
     <div class="landing-page-wrapper">
-        <router-link to="/home">Click Here To Enter</router-link>
+        <router-link to="/home/board">Click Here To Enter</router-link>
     </div>
 </template>
 
@@ -13,7 +13,6 @@ export default {
     }
   },
   beforeMount: function () {
-    console.log('mounting landing...')
     this.$store.commit({
       type: 'setWidth',
       width: this.max_width

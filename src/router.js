@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Landing from '@/views/Landing.vue'
 import Home from '@/views/Home.vue'
 import TestComplete from '@/views/TestComplete.vue'
+import UserBoard from '@/views/UserBoard'
 
 Vue.use(Router)
 
@@ -16,7 +17,13 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: Home
+      component: Home,
+      children: [
+        {
+          path: 'board',
+          component: UserBoard
+        }
+      ]
     },
     {
       path: '/test',

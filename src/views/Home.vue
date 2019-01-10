@@ -3,6 +3,9 @@
     <div class="col-1">
       <language-selector></language-selector>
     </div>
+    <div class="col-2">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -41,10 +44,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.landing-page-wrapper {
+.home-page-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     height: 100%;
 
