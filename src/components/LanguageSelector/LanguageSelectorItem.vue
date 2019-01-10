@@ -1,11 +1,16 @@
 <template>
-    <li class="flag-img-item"><img class="flag-img" :src="require(`@/assets/${img}`)" :alt="language" /></li>
+    <li v-on:click="goToLanguageHomePage" class="flag-img-item"><img class="flag-img" :src="require(`@/assets/${img}`)" :alt="language" /></li>
 </template>
 
 <script>
 export default {
   name: 'LanguageSelectorItem',
-  props: ['language', 'img']
+  props: ['language', 'img'],
+  methods: {
+    goToLanguageHomePage: function () {
+      this.$router.push(`/home/${this.language.toLowerCase()}`)
+    }
+  }
 }
 </script>
 

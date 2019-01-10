@@ -4,7 +4,9 @@
       <language-selector></language-selector>
     </div>
     <div class="col-2">
-      <router-view></router-view>
+      <transition name="router-anim" mode="out-in">
+        <router-view></router-view>
+      </transition>
     </div>
   </div>
 </template>

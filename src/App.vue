@@ -48,16 +48,6 @@ export default {
   padding: 0.8rem;
   transition: max-width .75s;
 }
-.router-anim-enter-active {
-  transition: opacity .5s 1s;
-}
-.router-anim-leave-active {
-  transition: opacity .5s;
-}
-.router-anim-enter,
-.router-anim-leave-to {
-  opacity: 0;
-}
 </style>
 
 <style lang="scss">
@@ -81,5 +71,14 @@ body {
   line-height: 1.2rem;
   box-sizing: border-box;
 }
-
+.router-anim-enter-active {
+  transition: opacity .5s 1s;
+}
+.router-anim-leave-active {
+  transition: opacity .5s;
+}
+.router-anim-enter,
+.router-anim-leave-to {
+  opacity: 0;
+}
 </style>

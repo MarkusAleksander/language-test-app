@@ -4,6 +4,7 @@ import Landing from '@/views/Landing.vue'
 import Home from '@/views/Home.vue'
 import TestComplete from '@/views/TestComplete.vue'
 import UserBoard from '@/views/UserBoard'
+import LanguageBoard from '@/views/LanguageBoard'
 
 Vue.use(Router)
 
@@ -22,6 +23,10 @@ export default new Router({
         {
           path: 'board',
           component: UserBoard
+        },
+        {
+          path: ':language',
+          component: LanguageBoard
         }
       ]
     },

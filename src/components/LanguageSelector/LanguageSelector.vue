@@ -1,6 +1,7 @@
 <template>
     <div class="language-selector">
         <ul>
+          <li><router-link to="/home/board">Return to Home</router-link></li>
             <language-selector-item
                 v-for="language in language_list"
                 :key="language.id"

@@ -47,43 +47,43 @@ export default {
     },
     getTerms: function () {
       // FIlter down to usable terms
-      let tTerms = localData.terms.filter(
-        t => t.language === this.selected_language
-      )
-      // Select random ones
-      let rTerms = []
-      if (tTerms.length < this.num_questions) {
-        return []
-      }
-      while (rTerms.length < this.num_questions) {
-        let r = tTerms[Math.floor(Math.random() * tTerms.length)]
-        let b = (function () {
-          for (let x = 0; x < rTerms.length; x++) {
-            if (rTerms[x] === r) return true
-          }
-        })()
-        if (!b) {
-          rTerms.push(r)
-        }
-      }
+      // let tTerms = localData.terms.filter(
+      //   t => t.language === this.selected_language
+      // )
+      // // Select random ones
+      // let rTerms = []
+      // if (tTerms.length < this.num_questions) {
+      //   return []
+      // }
+      // while (rTerms.length < this.num_questions) {
+      //   let r = tTerms[Math.floor(Math.random() * tTerms.length)]
+      //   let b = (function () {
+      //     for (let x = 0; x < rTerms.length; x++) {
+      //       if (rTerms[x] === r) return true
+      //     }
+      //   })()
+      //   if (!b) {
+      //     rTerms.push(r)
+      //   }
+      // }
 
-      return rTerms
+      // return rTerms
     },
     updateTestArray: function () {
       // If called and language not selected, return
-      if (this.selected_language === 0) return
-      // Reset array
-      this.testArray = []
-      // For each item in the term list, create an object containing the term and translation
-      for (let i = 0; i < this.term_list.length; i++) {
-        this.testArray.push({
-          id: i + 1,
-          term: this.term_list[i].term,
-          translation: localData.translations.find(
-            b => b.id === this.term_list[i].translation
-          ).translation
-        })
-      }
+      // if (this.selected_language === 0) return
+      // // Reset array
+      // this.testArray = []
+      // // For each item in the term list, create an object containing the term and translation
+      // for (let i = 0; i < this.term_list.length; i++) {
+      //   this.testArray.push({
+      //     id: i + 1,
+      //     term: this.term_list[i].term,
+      //     translation: localData.translations.find(
+      //       b => b.id === this.term_list[i].translation
+      //     ).translation
+      //   })
+      // }
     },
     updateScore: function (s) {
       this.score += s
@@ -109,7 +109,7 @@ export default {
   },
   computed: {},
   mounted: function () {
-    this.language_list = localData.languages
+    // this.language_list = localData.languages
   }
 }
 </script>
