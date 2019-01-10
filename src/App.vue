@@ -60,6 +60,7 @@ export default {
     margin: 0;
     border: 0;
     box-sizing: border-box;
+    line-height: 1.2em;
   }
 }
 html,
@@ -68,7 +69,6 @@ body {
   width: 100%;
   font-family: "Montserrat", serif;
   font-size: 62.5%;
-  line-height: 1.2rem;
   box-sizing: border-box;
 }
 .router-anim-enter-active {

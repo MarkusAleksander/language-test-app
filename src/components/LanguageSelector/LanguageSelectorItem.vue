@@ -25,7 +25,8 @@ export default {
         width: 100%;
         max-width: 150px;
         height: auto;
-        display: inline-block;
+        display: block;
+        margin: 0 auto;
         cursor: pointer;
 
         &:hover,

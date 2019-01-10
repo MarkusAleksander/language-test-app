@@ -39,6 +39,17 @@ export default {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
+        list-style: none;
+        font-size: 20px;
+
+        li {
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+
+        a {
+          text-decoration: none;
+        }
     }
 }
 </style>
