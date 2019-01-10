@@ -1,21 +1,11 @@
 <template>
-    <li><img :src="flag_img" /></li>
+    <li><img :src="require(`@/assets/${img}`)" :alt="language" /></li>
 </template>
 
 <script>
 export default {
     name: "LanguageSelectorItem",
-    props: ["language", "img"],
-    data: function () {
-        return {
-            flag_img: ''
-        }
-    },
-    mounted: function () {
-        let img = new Image();
-        img.src = `/../../assets/${this.img}`;
-        this.flag_img = img.src;
-    }
+    props: ["language", "img"]
 }
 </script>
 
