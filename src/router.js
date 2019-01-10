@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Landing from '@/views/Landing.vue'
-import Home from '@/views/Home.vue'
+import Landing from '@/views/MainPages/Landing.vue'
+import Home from '@/views/MainPages/Home.vue'
 import TestComplete from '@/views/TestComplete.vue'
-import UserBoard from '@/views/UserBoard'
-import LanguageBoard from '@/views/LanguageBoard'
+import UserBoard from '@/views/Boards/UserBoard'
+import LanguageBoard from '@/views/Boards/LanguageBoard'
 
 Vue.use(Router)
 

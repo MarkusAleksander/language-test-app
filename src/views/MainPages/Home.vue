@@ -5,7 +5,7 @@
     </div>
     <div class="col-2">
       <transition name="router-anim" mode="out-in">
-        <router-view></router-view>
+        <router-view :key="$route.fullPath"></router-view>
       </transition>
     </div>
   </div>

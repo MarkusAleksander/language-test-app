@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <section id="main" :style="style_max_width">
-      <transition name="router-anim" mode="out-in">
+      <transition name="router-anim_delay" mode="out-in">
         <router-view/>
       </transition>
     </section>
@@ -71,12 +71,18 @@ body {
   font-size: 62.5%;
   box-sizing: border-box;
 }
-.router-anim-enter-active {
+.router-anim_delay-enter-active {
   transition: opacity .5s 1s;
 }
-.router-anim-leave-active {
+.router-anim-enter-active {
   transition: opacity .5s;
 }
+.router-anim_delay-leave-active,
+.router-anim-leave-active  {
+  transition: opacity .5s;
+}
+.router-anim_delay-enter,
+.router-anim_delay-leave-to,
 .router-anim-enter,
 .router-anim-leave-to {
   opacity: 0;
