@@ -26,18 +26,14 @@ export default {
         &:hover,
         &:focus {
             position: relative;
+            top: -1px;
+            lefT: -1px;
             box-shadow: 0rem 0rem 0.5rem 0.2rem rgb(59, 169, 241);
-            border: 1px solid rgb(70,70,70);
-            border-left:0;
-            border-top: 0;
         }
         &:active {
             top: 1px;
             left: 1px;
-            box-shadow: none;
-            border: 1px solid rgb(70,70,70);
-            border-right:0;
-            border-bottom: 0;
+            box-shadow: -0.1rem -0.1rem 0rem 0.1rem rgb(70,70,70);
         }
     }
 }

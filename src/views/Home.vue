@@ -46,18 +46,24 @@ export default {
 <style lang="scss" scoped>
 .home-page-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: stretch;
     width: 100%;
     height: 100%;
 
+    .col-1,
+    .col-2 {
+      padding: 0.8rem;
+      border-radius: 1.5rem;
+      border: 0.2rem ridge rgb(236, 235, 235);
+      box-shadow: 0.2rem 0.2rem 0.5rem #ccc;
+    }
+
     .col-1 {
-      width: 25%;
-      flex-grow: 1;
+      width: 24%;
     }
     .col-2 {
-      width: 75%;
-      flex-grow: 2;
+      width: 74%;
     }
 }
 </style>

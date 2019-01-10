@@ -42,8 +42,8 @@ export default {
   flex-grow: 0;
   margin: 0 auto;
   background-color: #fff;
-  border: 0.2rem solid rgb(167, 167, 167);
   border-radius: 1.5rem;
+  border: 0.2rem ridge rgb(207, 206, 206);
   box-shadow: 0.2rem 0.2rem 0.5rem #ccc;
   padding: 0.8rem;
   transition: max-width .75s;
