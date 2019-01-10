@@ -11,7 +11,7 @@
 <script>
 
 export default {
-  name: "App",
+  name: 'App',
   data: function () {
     return {
       max_width: 1500
@@ -78,7 +78,7 @@ body {
   width: 100%;
   font-family: "Montserrat", serif;
   font-size: 62.5%;
-  line-height: 1.2em;
+  line-height: 1.2rem;
   box-sizing: border-box;
 }
 

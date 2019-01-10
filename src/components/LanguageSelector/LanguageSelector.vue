@@ -11,19 +11,19 @@
     </div>
 </template>
 <script>
-import LanguageSelectorItem from '@/components/LanguageSelector/LanguageSelectorItem';
+import LanguageSelectorItem from '@/components/LanguageSelector/LanguageSelectorItem'
 
 export default {
-  name: "LanguageSelector",
+  name: 'LanguageSelector',
   data: function () {
-      return {}
+    return {}
   },
   components: {
-      LanguageSelectorItem
+    LanguageSelectorItem
   },
   computed: {
     language_list: function () {
-      return this.$store.getters.getLanguages;
+      return this.$store.getters.getLanguages
     }
   }
 }
@@ -38,13 +38,6 @@ export default {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-
-        li {
-            display: block;
-            width: 100%;
-            text-align: center;
-            font-size: 2rem;
-        }
     }
 }
 </style>
