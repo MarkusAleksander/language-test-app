@@ -25,7 +25,7 @@ export default {
     return {
       language_list: null,
       max_width: 1200,
-      appColours: ['#fff','#000','#fff']
+      appColours: [[146, 254, 157], [0, 201, 255], [0, 201, 255]]
     }
   },
   beforeMount: function () {
@@ -35,7 +35,7 @@ export default {
         colours: this.appColours,
         width: this.max_width
       }
-    });
+    })
     this.$store.commit({
       type: 'setLocalData',
       data: localData

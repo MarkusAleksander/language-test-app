@@ -9,6 +9,7 @@
 </template>
 
 <script>
+var TWEEN = require('@tweenjs/tween.js')
 
 export default {
   name: 'App',
@@ -17,19 +18,46 @@ export default {
     }
   },
   methods: {
-    updateBackgroundColour: function(colours) {
-      console.log(colours);
-      document.documentElement.style.setProperty('--bg_col_1', colours[0]);
-      document.documentElement.style.setProperty('--bg_col_2', colours[1]);
-      document.documentElement.style.setProperty('--bg_col_3', colours[2]);
-    },
+    updateBackgroundColour: function (colours) {
+      let appEl = document.querySelector('#app')
+
+      let oldColours = {}
+      for (let i = 1; i <= 3; i++) {
+        for (let j = 1; j <= 3; j++) {
+          oldColours[`bg_col_${i}-${j}`] = Number(window.getComputedStyle(appEl).getPropertyValue(`--bg_col_${i}-${j}`))
+        }
+      }
+
+      let newColours = {}
+      for (let i = 1; i <= 3; i++) {
+        for (let j = 1; j <= 3; j++) {
+          newColours[`bg_col_${i}-${j}`] = colours[i - 1][j - 1]
+        }
+      }
+
+      function animate (time) {
+        requestAnimationFrame(animate)
+        TWEEN.update(time)
+      }
+      requestAnimationFrame(animate)
+      new TWEEN.Tween(oldColours)
+        .to(newColours, 1000)
+        .onUpdate(() => {
+          for (let i = 1; i <= 3; i++) {
+            for (let j = 1; j <= 3; j++) {
+              appEl.style.setProperty(`--bg_col_${i}-${j}`, oldColours[`bg_col_${i}-${j}`])
+            }
+          }
+        })
+        .start()
+    }
   },
   computed: {
     currentAppWidth: function () {
       return `max-width:${this.$store.getters.getAppStyle.width}px`
     },
     currentBackgroundColour: function () {
-      return this.updateBackgroundColour(this.$store.getters.getAppStyle.colours);
+      return this.updateBackgroundColour(this.$store.getters.getAppStyle.colours)
       // return `background-image:linear-gradient(to bottom right, ${this.$store.getters.getAppStyle.colours[0]} 0%, ${this.$store.getters.getAppStyle.colours[1]} 50%, ${this.$store.getters.getAppStyle.colours[2]} 100%)`
     }
   }
@@ -39,13 +67,25 @@ export default {
 
 <style lang="scss" scoped>
 #app {
+  --bg_col_1-1:255;
+  --bg_col_1-2:255;
+  --bg_col_1-3:255;
+  --bg_col_2-1:255;
+  --bg_col_2-2:255;
+  --bg_col_2-3:255;
+  --bg_col_3-1:255;
+  --bg_col_3-2:255;
+  --bg_col_3-3:255;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: start;
   padding: 2rem 0;
-  background-image: linear-gradient(to bottom right, var(--bg_col_1) 0%, var(--bg_col_2) 50%, var(--bg_col_3, 100%));
+  background-image: linear-gradient(to bottom right,
+    rgb(var(--bg_col_1-1),var(--bg_col_1-2),var(--bg_col_1-3)) 0%,
+    rgb(var(--bg_col_2-1),var(--bg_col_2-2),var(--bg_col_2-3)) 50%,
+    rgb(var(--bg_col_3-1),var(--bg_col_3-2),var(--bg_col_3-3)) 100%);
 }
 #main {
   width: 100%;
@@ -64,9 +104,6 @@ export default {
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 :root {
-  --bg_col_1: #fff;
-  --bg_col_2: #fff;
-  --bg_col_3: #fff;
 }
 * {
   &,

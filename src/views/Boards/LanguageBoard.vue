@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "LanguageBoard",
+  name: 'LanguageBoard',
   data: function () {
     return {
       selected_language: this.$route.params.language

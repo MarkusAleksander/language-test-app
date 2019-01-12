@@ -9,7 +9,7 @@ export default {
   name: 'Landing',
   data: function () {
     return {
-      appColours: ['#00C9FF','#92FE9D','#92FE9D'],
+      appColours: [[0, 201, 255], [146, 254, 157], [146, 254, 157]],
       max_width: 500
     }
   },
@@ -20,7 +20,7 @@ export default {
         colours: this.appColours,
         width: this.max_width
       }
-    });
+    })
   }
 }
 </script>
