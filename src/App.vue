@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <section id="main" :style="style_max_width">
+  <div id="app" :data-bg-update="currentBackgroundColour">
+    <section id="main" :style="currentAppWidth">
       <transition name="router-anim_delay" mode="out-in">
         <router-view/>
       </transition>
@@ -14,12 +14,23 @@ export default {
   name: 'App',
   data: function () {
     return {
-      max_width: 1500
     }
   },
+  methods: {
+    updateBackgroundColour: function(colours) {
+      console.log(colours);
+      document.documentElement.style.setProperty('--bg_col_1', colours[0]);
+      document.documentElement.style.setProperty('--bg_col_2', colours[1]);
+      document.documentElement.style.setProperty('--bg_col_3', colours[2]);
+    },
+  },
   computed: {
-    style_max_width: function () {
-      return `max-width:${this.$store.getters.getMaxWidth}px`
+    currentAppWidth: function () {
+      return `max-width:${this.$store.getters.getAppStyle.width}px`
+    },
+    currentBackgroundColour: function () {
+      return this.updateBackgroundColour(this.$store.getters.getAppStyle.colours);
+      // return `background-image:linear-gradient(to bottom right, ${this.$store.getters.getAppStyle.colours[0]} 0%, ${this.$store.getters.getAppStyle.colours[1]} 50%, ${this.$store.getters.getAppStyle.colours[2]} 100%)`
     }
   }
 }
@@ -30,11 +41,11 @@ export default {
 #app {
   width: 100%;
   height: 100%;
-  background-color: #f8f8f8;
   display: flex;
   justify-content: center;
   align-items: start;
   padding: 2rem 0;
+  background-image: linear-gradient(to bottom right, var(--bg_col_1) 0%, var(--bg_col_2) 50%, var(--bg_col_3, 100%));
 }
 #main {
   width: 100%;
@@ -52,6 +63,11 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
+:root {
+  --bg_col_1: #fff;
+  --bg_col_2: #fff;
+  --bg_col_3: #fff;
+}
 * {
   &,
   &:after,

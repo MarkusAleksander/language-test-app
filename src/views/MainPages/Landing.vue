@@ -9,14 +9,18 @@ export default {
   name: 'Landing',
   data: function () {
     return {
+      appColours: ['#00C9FF','#92FE9D','#92FE9D'],
       max_width: 500
     }
   },
   beforeMount: function () {
     this.$store.commit({
-      type: 'setWidth',
-      width: this.max_width
-    })
+      type: 'setAppStyle',
+      data: {
+        colours: this.appColours,
+        width: this.max_width
+      }
+    });
   }
 }
 </script>
