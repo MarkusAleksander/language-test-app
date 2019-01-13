@@ -18,30 +18,27 @@ export default {
     }
   },
   methods: {
+    // Update Current background colour
     updateBackgroundColour: function (colours) {
+      // Get app element where custom properties are
       let appEl = document.querySelector('#app')
 
+      // prepare colours into an object - need current colours and new colours
       let oldColours = {}
-      for (let i = 1; i <= 3; i++) {
-        for (let j = 1; j <= 3; j++) {
-          oldColours[`bg_col_${i}-${j}`] = Number(window.getComputedStyle(appEl).getPropertyValue(`--bg_col_${i}-${j}`))
-        }
-      }
-
       let newColours = {}
       for (let i = 1; i <= 3; i++) {
         for (let j = 1; j <= 3; j++) {
+          oldColours[`bg_col_${i}-${j}`] = Number(window.getComputedStyle(appEl).getPropertyValue(`--bg_col_${i}-${j}`))
           newColours[`bg_col_${i}-${j}`] = colours[i - 1][j - 1]
         }
       }
 
-      function animate (time) {
-        requestAnimationFrame(animate)
-        TWEEN.update(time)
-      }
-      requestAnimationFrame(animate)
+      // Prepare Tween aniamtion
+      requestAnimationFrame(this.tweenAnimate);
+
+      // Animate colour tween
       new TWEEN.Tween(oldColours)
-        .to(newColours, 1000)
+        .to(newColours, 1500)
         .onUpdate(() => {
           for (let i = 1; i <= 3; i++) {
             for (let j = 1; j <= 3; j++) {
@@ -50,12 +47,20 @@ export default {
           }
         })
         .start()
+    },
+    tweenAnimate: function (time) {
+      if(!time) return;
+      // Required for tween
+      requestAnimationFrame(this.tweenAnimate)
+      TWEEN.update(time)
     }
   },
   computed: {
+    // Update app for current set app width
     currentAppWidth: function () {
       return `max-width:${this.$store.getters.getAppStyle.width}px`
     },
+    // Update app for current set background colour
     currentBackgroundColour: function () {
       return this.updateBackgroundColour(this.$store.getters.getAppStyle.colours)
       // return `background-image:linear-gradient(to bottom right, ${this.$store.getters.getAppStyle.colours[0]} 0%, ${this.$store.getters.getAppStyle.colours[1]} 50%, ${this.$store.getters.getAppStyle.colours[2]} 100%)`

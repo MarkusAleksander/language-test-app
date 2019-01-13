@@ -24,17 +24,13 @@ export default {
   data: function () {
     return {
       language_list: null,
-      max_width: 1200,
-      appColours: [[146, 254, 157], [0, 201, 255], [0, 201, 255]]
+      max_width: 1200
     }
   },
   beforeMount: function () {
     this.$store.commit({
-      type: 'setAppStyle',
-      data: {
-        colours: this.appColours,
-        width: this.max_width
-      }
+      type: 'setWidth',
+      width: this.max_width
     })
     this.$store.commit({
       type: 'setLocalData',
