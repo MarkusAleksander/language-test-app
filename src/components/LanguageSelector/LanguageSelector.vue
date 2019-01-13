@@ -7,6 +7,7 @@
                 :key="language.id"
                 :img="language.flag_image"
                 :language="language.language"
+                :colours="language.flag_colours"
                 ></language-selector-item>
         </ul>
     </div>

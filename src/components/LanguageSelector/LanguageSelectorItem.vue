@@ -5,9 +5,13 @@
 <script>
 export default {
   name: 'LanguageSelectorItem',
-  props: ['language', 'img'],
+  props: ['language', 'img', 'colours'],
   methods: {
     goToLanguageHomePage: function () {
+      this.$store.commit({
+          type: 'setBackgroundColours',
+          colours: this.colours
+      })
       this.$router.push(`/home/${this.language.toLowerCase()}`)
     }
   }
