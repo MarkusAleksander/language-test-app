@@ -9,8 +9,8 @@ export default {
   methods: {
     goToLanguageHomePage: function () {
       this.$store.commit({
-          type: 'setBackgroundColours',
-          colours: this.colours
+        type: 'setBackgroundColours',
+        colours: this.colours
       })
       this.$router.push(`/home/${this.language.toLowerCase()}`)
     }

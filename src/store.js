@@ -12,22 +12,22 @@ export default new Vuex.Store({
     bg_col_array: [[255, 255, 255], [255, 255, 255], [255, 255, 255]]
   },
   mutations: {
-    completeTest(state) {
+    completeTest (state) {
       state.testComplete = true
     },
-    updateScore(state, payload) {
+    updateScore (state, payload) {
       state.testScore += payload.score
     },
-    setLocalData(state, data) {
+    setLocalData (state, data) {
       state.localData = data
     },
-    setWidth(state, data) {
+    setWidth (state, data) {
       state.current_max_width = data.width
     },
-    setBackgroundColours(state, data) {
+    setBackgroundColours (state, data) {
       state.bg_col_array = data.colours
     },
-    setAppStyle(state, data) {
+    setAppStyle (state, data) {
       state.current_max_width = data.data.width
       state.bg_col_array = data.data.colours
     }

@@ -34,7 +34,7 @@ export default {
       }
 
       // Prepare Tween aniamtion
-      requestAnimationFrame(this.tweenAnimate);
+      requestAnimationFrame(this.tweenAnimate)
 
       // Animate colour tween
       new TWEEN.Tween(oldColours)
@@ -49,7 +49,7 @@ export default {
         .start()
     },
     tweenAnimate: function (time) {
-      if(!time) return;
+      if (!time) return
       // Required for tween
       requestAnimationFrame(this.tweenAnimate)
       TWEEN.update(time)
