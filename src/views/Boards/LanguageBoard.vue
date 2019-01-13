@@ -9,16 +9,20 @@
 </template>
 
 <script>
-import ModuleList from '@/components/Modules/ModuleList'
+import ModuleList from '@/components/ModulesSelector/ModuleList'
 
 export default {
   name: 'LanguageBoard',
   components: {
     ModuleList
   },
+  beforeMount: function () {
+    
+  },
   data: function () {
     return {
-      selected_language: this.$route.params.language
+      selected_language: this.$store.getters.getSelectedLanguage,
+      module_data: this.$store.module_data
     }
   }
 }

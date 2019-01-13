@@ -13,6 +13,7 @@
 
 <script>
 import localData from '@/local-data/local-data.js'
+import moduleData from '@/local-data/modules.js'
 
 import LanguageSelector from '@/components/LanguageSelector/LanguageSelector'
 
@@ -35,6 +36,10 @@ export default {
     this.$store.commit({
       type: 'setLocalData',
       data: localData
+    })
+    this.$store.commit({
+      type: 'setModuleData',
+      data: moduleData
     })
   },
   mounted: function () {

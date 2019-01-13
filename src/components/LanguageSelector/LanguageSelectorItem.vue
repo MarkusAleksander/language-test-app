@@ -12,6 +12,10 @@ export default {
         type: 'setBackgroundColours',
         colours: this.colours
       })
+      this.$store.commit({
+        type: 'setLanguage',
+        language: this.language.toLowerCase()
+      })
       this.$router.push(`/home/${this.language.toLowerCase()}`)
     }
   }
