@@ -11,7 +11,40 @@ export default new Vuex.Store({
     current_max_width: 0,
     bg_col_array: [[255, 255, 255], [255, 255, 255], [255, 255, 255]],
     selected_language: '',
-    module_data: null
+    module_data: {
+      modules: [
+        {
+          id: 0,
+          lang_id: 1,
+          title: 'Greetings'
+        },
+        {
+          id: 1,
+          lang_id: 2,
+          title: 'Greetings'
+        },
+        {
+          id: 2,
+          lang_id: 1,
+          title: 'The Alphabet'
+        },
+        {
+          id: 3,
+          lang_id: 2,
+          title: 'The Alphabet'
+        },
+        {
+          id: 4,
+          lang_id: 1,
+          title: 'Numbers'
+        },
+        {
+          id: 5,
+          lang_id: 2,
+          title: 'Numbers'
+        }
+      ]
+    }
   },
   mutations: {
     completeTest(state) {

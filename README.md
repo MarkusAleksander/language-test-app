@@ -9,3 +9,5 @@ TODOs
 * Improve styling
 * Write language test plan and outline
 * Create phrase generator
+
+* Structure language and module data

@@ -1,5 +1,5 @@
 <template>
-    <div class="module-item">
+    <div class="module-item" v-on:click="handleClick">
         <div class="module-item-image"></div>
         <p class="module-item-title">{{moduleTitle}}</p>
     </div>
@@ -12,7 +12,12 @@ export default {
     return {
     }
   },
-  props: ['moduleTitle']
+  props: ['moduleTitle'],
+  methods: {
+      handleClick: function () {
+          this.$emit('open-module', this.moduleTitle);
+      }
+  }
 }
 </script>
 
